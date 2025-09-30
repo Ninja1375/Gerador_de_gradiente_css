@@ -4,3 +4,14 @@ Um projeto simples e intuitivo que permite **gerar gradientes CSS personalizados
 
 ## 📂 Estrutura do projeto
 
+/
+
+├── index.html
+
+├── style.css
+
+├── script.js
+
+└── font/
+
+└── sans.ttf
