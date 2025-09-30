@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Gerador de gradientes CSS - Crie e copie códigos de gradiente personalizados"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Gerador de Gradiente CSS</title>
+</head>
+
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Gerador de Gradiente CSS</h1>
+      <p>Selecione cores e direção para criar seu gradiente</p>
+    </header>
+
+    <div class="select-colors">
+      <div class="color-input-group">
+        <label for="color_one">Cor 1</label>
+        <input type="color" name="color-one" id="color_one" value="#eb4034" aria-label="Selecionar primeira cor"/>
+      </div>
+      <div class="color-input-group">
+        <label for="color_two">Cor 2</label>
+        <input type="color" name="color-two" id="color_two" value="#349beb" aria-label="Selecionar segunda cor"/>
+      </div>
+    </div>
+
+    <div class="direction-buttons">
+      <h2>Direção do Gradiente</h2>
+      <div class="buttons-grid">
+        <button type="button" onclick="setDirection('to top', this)" class="direction-btn active" aria-label="Direção para cima">
+          <i class="fas fa-arrow-up"></i>
+        </button>
+        <button type="button" onclick="setDirection('to bottom', this)" class="direction-btn" aria-label="Direção para baixo">
+          <i class="fas fa-arrow-down"></i>
+        </button>
+        <button type="button" onclick="setDirection('to left', this)" class="direction-btn" aria-label="Direção para esquerda">
+          <i class="fas fa-arrow-left"></i>
+        </button>
+        <button type="button" onclick="setDirection('to right', this)" class="direction-btn" aria-label="Direção para direita">
+          <i class="fas fa-arrow-right"></i>
+        </button>
+        <button type="button" onclick="setDirection('to top right', this)" class="direction-btn" aria-label="Direção para cima direita">
+          <i class="fas fa-arrow-up" style="transform: rotate(45deg)"></i>
+        </button>
+        <button type="button" onclick="setDirection('to bottom left', this)" class="direction-btn" aria-label="Direção para baixo esquerda">
+          <i class="fas fa-arrow-down" style="transform: rotate(45deg)"></i>
+        </button>
+        <button type="button" onclick="setDirection('to top left', this)" class="direction-btn" aria-label="Direção para cima esquerda">
+          <i class="fas fa-arrow-left" style="transform: rotate(45deg)"></i>
+        </button>
+        <button type="button" onclick="setDirection('to bottom right', this)" class="direction-btn" aria-label="Direção para baixo direita">
+          <i class="fas fa-arrow-right" style="transform: rotate(45deg)"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="preview">
+      <h2>Visualização</h2>
+      <div id="gradient-preview" class="gradient-preview"></div>
+    </div>
+
+    <div class="generate-section">
+      <button type="button" id="generate-btn" onclick="generateGradient()" class="generate-btn">
+        <i class="fas fa-palette"></i>
+        Gerar Gradiente
+      </button>
+    </div>
+
+    <div class="output-section">
+      <h2>Seu Código CSS</h2>
+      <div class="code-output">
+        <textarea id="css-code" rows="3" readonly aria-label="Código CSS do gradiente"></textarea>
+        <button type="button" id="copy-btn" onclick="copyCode(event)" class="copy-btn">
+          <i class="fas fa-copy"></i>
+          Copiar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

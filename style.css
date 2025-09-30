@@ -1,0 +1,376 @@
+/* Reset e configurações base */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "sans";
+  src: url('font/sans.ttf') format('truetype');
+  font-display: swap;
+}
+
+/* Variáveis CSS para melhor manutenção */
+:root {
+  --primary-bg: #02010d;
+  --container-bg: rgba(255, 255, 255, 0.05);
+  --container-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+  --border-radius: 20px;
+  --blur-effect: blur(20px);
+  --accent-color: rgb(52, 147, 255);
+  --hover-color: rgb(253, 207, 78);
+  --active-color: #1e8e3e;
+  --text-color: #ffffff;
+  --button-bg: #ffffff;
+  --transition: all 0.3s ease;
+}
+
+/* Estilos base */
+body {
+  background-color: var(--primary-bg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  overflow-x: hidden;
+  min-height: 100vh;
+  font-family: "sans", Arial, sans-serif;
+  color: var(--text-color);
+  line-height: 1.6;
+  transition: background 0.5s ease;
+}
+
+.container {
+  width: 90%;
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  background: var(--container-bg);
+  box-shadow: var(--container-shadow);
+  border-radius: var(--border-radius);
+  backdrop-filter: var(--blur-effect);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Header */
+.header {
+  margin-bottom: 1rem;
+}
+
+.header h1 {
+  color: var(--text-color);
+  font-weight: 400;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.header p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+}
+
+/* Seção de cores */
+.select-colors {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1rem 0;
+}
+
+.color-input-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.color-input-group label {
+  color: var(--text-color);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.select-colors input[type="color"] {
+  width: 80px;
+  height: 50px;
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.select-colors input[type="color"]::-webkit-color-swatch {
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  transition: var(--transition);
+}
+
+.select-colors input[type="color"]::-webkit-color-swatch:hover {
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.select-colors input[type="color"]::-moz-color-swatch {
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Botões de direção */
+.direction-buttons h2 {
+  color: var(--text-color);
+  font-weight: 400;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.buttons-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.direction-btn {
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-color);
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.direction-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.direction-btn.active {
+  background-color: var(--accent-color);
+  transform: scale(1.05);
+}
+
+/* Preview do gradiente */
+.preview h2 {
+  color: var(--text-color);
+  font-weight: 400;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.gradient-preview {
+  width: 100%;
+  height: 120px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #eb4034, #349beb);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  transition: var(--transition);
+}
+
+/* Botão de gerar */
+.generate-section {
+  margin: 1rem 0;
+}
+
+.generate-btn {
+  width: 200px;
+  height: 45px;
+  border: none;
+  border-radius: 8px;
+  background: var(--button-bg);
+  color: #333;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.generate-btn:hover {
+  background: var(--hover-color);
+  transform: translateY(-2px);
+}
+
+.generate-btn:active {
+  background: var(--active-color);
+  color: white;
+  transform: translateY(0);
+}
+
+/* Seção de output */
+.output-section h2 {
+  color: var(--text-color);
+  font-weight: 400;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.code-output {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+#css-code {
+  width: 100%;
+  max-width: 500px;
+  height: 80px;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  resize: vertical;
+  outline: none;
+  line-height: 1.4;
+}
+
+.copy-btn {
+  width: 150px;
+  height: 40px;
+  border: none;
+  border-radius: 6px;
+  background: var(--button-bg);
+  color: #333;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.copy-btn:hover {
+  background: var(--hover-color);
+}
+
+.copy-btn:active {
+  background: var(--active-color);
+  color: white;
+}
+
+.copy-btn.copied {
+  background: var(--active-color);
+  color: white;
+}
+
+/* Estados de foco para acessibilidade */
+button:focus-visible,
+input[type="color"]:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+    margin: 1rem auto;
+    padding: 1.5rem 1rem;
+    gap: 1rem;
+  }
+
+  .header h1 {
+    font-size: 1.5rem;
+  }
+
+  .buttons-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+  }
+
+  .direction-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 1rem;
+  }
+
+  .select-colors {
+    gap: 0.5rem;
+  }
+
+  .select-colors input[type="color"] {
+    width: 70px;
+    height: 45px;
+  }
+
+  .generate-btn {
+    width: 180px;
+    height: 42px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1rem 0.8rem;
+  }
+
+  .buttons-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.3rem;
+  }
+
+  .direction-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 0.9rem;
+  }
+
+  .select-colors {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .color-input-group {
+    width: 100%;
+  }
+
+  .select-colors input[type="color"] {
+    width: 100px;
+    height: 50px;
+  }
+
+  #css-code {
+    height: 70px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.container > * {
+  animation: fadeIn 0.5s ease-out;
+}
