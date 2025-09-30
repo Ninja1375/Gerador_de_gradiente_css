@@ -15,3 +15,25 @@ Um projeto simples e intuitivo que permite **gerar gradientes CSS personalizados
 └── font/
 
 └── sans.ttf
+
+## ⚙️ Funcionalidades
+
+- Selecionar duas cores para criar o gradiente  
+- Escolher a direção (horizontal, vertical ou diagonal)  
+- Pré-visualizar o gradiente aplicado em tempo real  
+- Gerar automaticamente o código CSS correspondente  
+- Copiar o código com um clique  
+
+## 🛠️ Tecnologias utilizadas
+
+- **HTML5** – Estrutura da aplicação  
+- **CSS3** – Estilização e responsividade  
+- **JavaScript (ES6+)** – Lógica de geração e cópia do gradiente  
+- **Font Awesome** – Ícones  
+
+## 📖 Como utilizar
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/Ninja1375/Gerador_de_gradiente_css.git
+
