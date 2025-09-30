@@ -37,3 +37,13 @@ Um projeto simples e intuitivo que permite **gerar gradientes CSS personalizados
    ```bash
    git clone https://github.com/Ninja1375/Gerador_de_gradiente_css.git
 
+Abra o ficheiro index.html no navegador
+
+Escolha as cores e direção do gradiente
+
+Clique em Gerar Gradiente
+
+Copie o código CSS e use no seu projeto
+
+📜 Licença
+Este projeto é de código aberto e pode ser utilizado livremente.
